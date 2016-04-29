@@ -36,12 +36,6 @@ object Option {
     else Some(lst.sum / lst.length)
   }
 
-  // def variance(lst: Seq[Double]): Option[Double] = {
-  // }
-}
-
-object Main{
-  def main(args: Array[String]): Unit = {
-    printf("Hello world")
+  def variance(lst: Seq[Double]): Option[Double] = {
   }
 }
