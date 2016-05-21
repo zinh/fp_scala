@@ -38,4 +38,13 @@ object Par{
     (memo: Par[List[A]], pa: Par[A]) => 
       map2(memo, pa)((lst: List[A], a: A) => (a::lst))
     )
+
+  def parFilter[A](as: List[A])(f: A => Boolean): Par[List[A]] = as.foldRight(unit(List(): List[A]))((a, memo) =>
+      map(memo)(lst => 
+          if (f(a))
+            a::lst
+          else
+            lst
+            )
+      )
 }
